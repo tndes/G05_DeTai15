@@ -1,0 +1,72 @@
+﻿@model IEnumerable<CNPM.Models.ChiTietPhieuXuatKho>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<link href="~/Content/bang.css" rel="stylesheet" />
+<div style="text-align:center">
+    @using (Html.BeginForm("index", "ChiTietPhieuXuatKho"))
+    {
+        <b>Search by: </b>@Html.RadioButton("searchBy", "SoLuong",true)<text>Số Lượng</text>
+        @Html.RadioButton("searchBy", "IdPhieuXK")<text>Id Phiếu Xuất Kho</text>
+
+        @Html.TextBox("search")<input type="submit" value="Search" style="width: auto;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;" />
+    }
+</div>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCT_PXK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdPhieuXK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaMua)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCT_PXK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPhieuXK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaBan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaMua)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdCT_PXK }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdCT_PXK }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdCT_PXK })
+            </td>
+        </tr>
+    }
+
+</table>

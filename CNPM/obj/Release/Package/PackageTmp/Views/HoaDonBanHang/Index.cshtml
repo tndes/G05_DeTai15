@@ -1,0 +1,103 @@
+﻿@model IEnumerable<CNPM.Models.HoaDonBanHang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<link href="~/Content/bang.css" rel="stylesheet" />
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div style="text-align:center">
+    @using (Html.BeginForm("index", "HoaDonBanHang"))
+    {
+        <b>Search by: </b>@Html.RadioButton("searchBy", "SDT", true)<text>Số Điện Thoại</text>
+        @Html.RadioButton("searchBy", "DiaChi")<text>Địa Chỉ</text>
+        @Html.RadioButton("searchBy", "HoTen")<text>Họ Tên</text>
+        @Html.TextBox("Search")<input type="submit" value="Search" style="width: auto;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;" />
+    }
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdHD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SDT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TienThueGTGT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThueSuatGTGT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayLapHoaDon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongCong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HTTT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdPhieuXK)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdHD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SDT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TienThueGTGT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThueSuatGTGT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayLapHoaDon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TongCong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HTTT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPhieuXK)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdHD }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdHD }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdHD })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,84 @@
+﻿@model CNPM.Models.DonDatHang_KH
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+<link href="~/Content/bang.css" rel="stylesheet" />
+
+<div>
+    <h4>DonDatHang_KH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdDDHKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdDDHKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiGianGiaoHang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiGianGiaoHang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PTTT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PTTT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdVT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdVT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

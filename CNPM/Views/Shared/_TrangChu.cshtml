@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="grid.css">
+    <link href="~/Content/grid.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="header__logo">
+                <img src="./logo.png" alt="" class="logo">
+            </div>
+            <div class="header__notifacion">
+                <div class="message">
+                    <i class="fas fa-envelope"></i>
+                    <div class="message_number">
+                        <span>1</span>
+                    </div>
+                </div>
+                <div class="account">
+                    <i class="fas fa-user-circle avartar"></i>
+                    <div class="account__decentralization">
+                        <p>Xin chào, ADMIN</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contain grid">
+            <div class="row no-maggin">
+                <div class="menu col l-2">
+                    <div class="menu__heading">
+                        <div class="heading__avartar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="heading__text">
+                            <div class="heading__name">ADMIN</div>
+                            <div class="heading__status">
+                                <i class="fas fa-circle"></i>Online
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="menu__list" id="menu__list">
+                        <li class="menu__item active" onclick="openPage('Home',this)">
+                            <a class="menu__link">
+                                <i class="fas fa-home"></i>Trang chủ
+                            </a>
+                        </li>
+                        <li class="menu__item--title" aria-readonly="true">
+                            DANH MỤC
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="KhachHang/Index" target="ifm">
+                                <i class="fas fa-users"></i>Khách hàng
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="NhanVien/Index" target="ifm">
+                                <i class="fas fa-users"></i>Nhân viên
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="NhaCungCap/Index" target="ifm">
+                                <i class="fas fa-boxes"></i>Nhà cung cấp vật tư
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="VatTu/Index" target="ifm">
+                                <i class="far fa-clipboard"></i>Vật tư
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="DVT/Index" target="ifm">
+                                <i class="fas fa-users"></i>Đơn Vị Tính
+                            </a>
+                        </li>
+                        <li class="menu__item--title" aria-readonly="true">
+                            CHỨC NĂNG
+                        </li>
+                        <li class="menu__item sub__click">
+                            <label for="click--show" class="menu__link">
+                                <i class="fas fa-warehouse"></i>Xuất kho<i class="fas fa-chevron-down"></i>
+                            </label>
+                            <input type="checkbox" hidden id="click--show">
+                            <ul class="menu__sub">
+                                <li class="menu__item">
+                                    <a class="menu__link" href="PhieuXuatKho/Index" target="ifm">
+                                        <i class="far fa-circle"></i>Tạo Phiếu Xuất Kho
+                                    </a>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__link" href="ChiTietPhieuXuatKho/Index" target="ifm">
+                                        <i class="far fa-circle"></i>Tạo chi tiết phiếu xuất
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item sub__click">
+                            <label for="click--show1" class="menu__link">
+                                <i class="fas fa-warehouse"></i> Nhập kho<i class="fas fa-chevron-down"></i>
+                            </label>
+                            <input type="checkbox" hidden id="click--show1">
+                            <ul class="menu__sub1">
+                                <li class="menu__item" >
+                                    <a class="menu__link" href="PhieuNhapKho/Index" target="ifm">
+                                        <i class="far fa-circle"></i>Tạo Phiếu Nhập Kho
+                                    </a>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__link" href="ChiTietPNK/Index" target="ifm">
+                                        <i class="far fa-circle"></i>Tạo Chi Tiết Phiếu Nhập Kho
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                      
+                        <li class="menu__item" >
+                            <a class="menu__link" href="HoaDonBanHang/Index" target="ifm">
+                                <i class="far fa-calendar-check"></i>Tạo Hóa Đơn
+                            </a>
+                        </li>
+                        <li class="menu__item" >
+                            <a class="menu__link" href="ChiTietHoaDon/Index" target="ifm">
+                                <i class="fas fa-sort-amount-down"></i>Tạo Chi Tiết Hóa đơn
+                            </a>
+                        </li>
+
+                        <li class="menu__item sub__click">
+                            <label for="click--show2" class="menu__link">
+                                <i class="fas fa-money-check"></i>Đặt hàng Khách Hàng <i class="fas fa-chevron-down"></i>
+                            </label>
+                            <input type="checkbox" hidden id="click--show2">
+                            <ul class="menu__sub2">
+                                <li class="menu__item">
+                                    <a class="menu__link" href="DDH_KH/Index" target="ifm">
+                                        <i class="far fa-circle"></i>Tạo Đơn
+                                    </a>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__link"  href="ChiTietDDH_KH/Index" target="ifm">
+                                        <i class="far fa-circle"></i>Tạo Chi Tiết Đơn 
+                                    </a>
+                                </li>
+                              
+                            </ul>
+                        </li>
+
+                        <li class="menu__item sub__click">
+                            <label for="click--show3" class="menu__link">
+                                <i class="fas fa-scroll"></i>Đặt Hàng Nhà Cung Cấp<i class="fas fa-chevron-down"></i>
+                            </label>
+                            <input type="checkbox" hidden id="click--show3">
+                            <ul class="menu__sub3">
+                                <li class="menu__item" >
+                                    <a class="menu__link" href="DonDHNCC/Index" target="ifm">
+                                        <i class="far fa-circle"></i>Tạo Đơn 
+                                    </a>
+                                </li>
+                                <li class="menu__item" onclick="openPage('Home',this)">
+                                    <a class="menu__link" href="ChiTietDDHNCC/Index" target="ifm">
+                                        <i class="far fa-circle"></i>Tạo Chi Tiết
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="menu__item--title" aria-readonly="true">
+                            KHÁC
+                        </li>
+                        <li class="menu__item" onclick="openPage('Home',this)">
+                            <a class="menu__link">
+                                <i class="far fa-question-circle"></i>Hỗ trợ
+                            </a>
+                        </li>
+                        <li class="menu__item" onclick="openPage('Home',this)">
+                            <a class="menu__link">
+                                <i class="fas fa-info-circle"></i>Thông tin công ty
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content col l-10">
+                    <iframe name="ifm" id="ifm" frameborder="0dp"; height="100%" width="100%" src=""></iframe>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openPage(pageName, elmnt) {
+            // Hide all elements with class="tabcontent" by default */
+            var i, tabcontent, menu__links;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Remove the background color of all tablinks/buttons
+            menu__items = document.getElementsByClassName("menu__item");
+            for (i = 0; i < menu__items.length; i++) {
+                menu__items[i].style.backgroundColor = "";
+            }
+
+            // Show the specific tab content
+            document.getElementById(pageName).style.display = "block";
+
+            // Add the specific color to the button used to open the tab content
+            elmnt.style.backgroundColor = color;
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+    <script>
+        var btnActive = document.getElementById("menu__list");
+        var btns = btnActive.getElementsByClassName("menu__item");
+
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace("active");
+                this.className += " active";
+            })
+        }
+        var today = new Date();
+
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+        var dateTime = date + ' ' + time;
+
+        document.getElementById('stockIn__date').placeholder = dateTime;
+        document.getElementById('stockOut__date').placeholder = dateTime;
+    </script>
+    <script>
+        const buyBtns = document.querySelectorAll('.js-test')
+        const modal = document.querySelector('.overlay')
+        const close = document.querySelector('.modal-close')
+        const modalContainer = document.querySelector('.modal-container')
+        function showBuyTicket() {
+            modal.classList.add('open')
+        }
+        function hideBuyTicket() {
+            modal.classList.remove('open')
+        }
+        for (const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', showBuyTicket)
+        }
+        close.addEventListener('click', hideBuyTicket)
+        modal.addEventListener('click', hideBuyTicket)
+        modalContainer.addEventListener('click', function (event) {
+            event.stopPropagation()
+        })
+    </script>
+
+
+
+    <div>
+
+        @RenderBody()
+    </div>
+</body>
+</html>

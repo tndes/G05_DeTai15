@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CNPMDOANCUOIKIModelStoreContainer" CdmEntityContainer="CNPMDOANCUOIKIEntities">
+    <EntitySetMapping Name="ChiTietDDH_KH">
+      <EntityTypeMapping TypeName="CNPMDOANCUOIKIModel.ChiTietDDH_KH">
+        <MappingFragment StoreEntitySet="ChiTietDDH_KH">
+          <ScalarProperty Name="IdCTDDH_KH" ColumnName="IdCTDDH_KH" />
+          <ScalarProperty Name="TenVatTu" ColumnName="TenVatTu" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="TongCong" ColumnName="TongCong" />
+          <ScalarProperty Name="IdDDHKH" ColumnName="IdDDHKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietDDH_NCC">
+      <EntityTypeMapping TypeName="CNPMDOANCUOIKIModel.ChiTietDDH_NCC">
+        <MappingFragment StoreEntitySet="ChiTietDDH_NCC">
+          <ScalarProperty Name="IdCTDDH_NCC" ColumnName="IdCTDDH_NCC" />
+          <ScalarProperty Name="IdDDHNCC" ColumnName="IdDDHNCC" />
+          <ScalarProperty Name="TenVatTu" ColumnName="TenVatTu" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="DVT" ColumnName="DVT" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietHoaDons">
+      <EntityTypeMapping TypeName="CNPMDOANCUOIKIModel.ChiTietHoaDon">
+        <MappingFragment StoreEntitySet="ChiTietHoaDon">
+          <ScalarProperty Name="IdCTHD" ColumnName="IdCTHD" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="IdHD" ColumnName="IdHD" />
+          <ScalarProperty Name="DVT" ColumnName="DVT" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="TenVT" ColumnName="TenVT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietPhieuNhapKhoes">
+      <EntityTypeMapping TypeName="CNPMDOANCUOIKIModel.ChiTietPhieuNhapKho">
+        <MappingFragment StoreEntitySet="ChiTietPhieuNhapKho">
+          <ScalarProperty Name="IdCT_PNK" ColumnName="IdCT_PNK" />
+          <ScalarProperty Name="IdPhieuNK" ColumnName="IdPhieuNK" />
+          <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="TenVT" ColumnName="TenVT" />
+          <ScalarProperty Name="IdDDHNCC" ColumnName="IdDDHNCC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietPhieuXuatKhoes">
+      <EntityTypeMapping TypeName="CNPMDOANCUOIKIModel.ChiTietPhieuXuatKho">
+        <MappingFragment StoreEntitySet="ChiTietPhieuXuatKho">
+          <ScalarProperty Name="IdCT_PXK" ColumnName="IdCT_PXK" />
+          <ScalarProperty Name="IdPhieuXK" ColumnName="IdPhieuXK" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+          <ScalarProperty Name="GiaMua" ColumnName="GiaMua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonDatHang_KH">
+      <EntityTypeMapping TypeName="CNPMDOANCUOIKIModel.DonDatHang_KH">
+        <MappingFragment StoreEntitySet="DonDatHang_KH">
+          <ScalarProperty Name="IdDDHKH" ColumnName="IdDDHKH" />
+          <ScalarProperty Name="IdKH" ColumnName="IdKH" />
+          <ScalarProperty Name="IdNV" ColumnName="IdNV" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="ThoiGianGiaoHang" ColumnName="ThoiGianGiaoHang" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="PTTT" ColumnName="PTTT" />
+          <ScalarProperty Name="IdVT" ColumnName="IdVT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonDatHang_NCC">
+      <EntityTypeMapping TypeName="CNPMDOANCUOIKIModel.DonDatHang_NCC">
+        <MappingFragment StoreEntitySet="DonDatHang_NCC">
+          <ScalarProperty Name="IdDDHNCC" ColumnName="IdDDHNCC" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="TenCongTy" ColumnName="TenCongTy" />
+          <ScalarProperty Name="ThoiGianGiaoHang" ColumnName="ThoiGianGiaoHang" />
+          <ScalarProperty Name="DiaDiemGiaoHang" ColumnName="DiaDiemGiaoHang" />
+          <ScalarProperty Name="IdNV" ColumnName="IdNV" />
+          <ScalarProperty Name="IdNCC" ColumnName="IdNCC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonViTinhs">
+      <EntityTypeMapping TypeName="CNPMDOANCUOIKIModel.DonViTinh">
+        <MappingFragment StoreEntitySet="DonViTinh">
+          <ScalarProperty Name="IdDVT" ColumnName="IdDVT" />
+          <ScalarProperty Name="DonVi" ColumnName="DonVi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoaDonBanHangs">
+      <EntityTypeMapping TypeName="CNPMDOANCUOIKIModel.HoaDonBanHang">
+        <MappingFragment StoreEntitySet="HoaDonBanHang">
+          <ScalarProperty Name="IdHD" ColumnName="IdHD" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="TienThueGTGT" ColumnName="TienThueGTGT" />
+          <ScalarProperty Name="ThueSuatGTGT" ColumnName="ThueSuatGTGT" />
+          <ScalarProperty Name="NgayLapHoaDon" ColumnName="NgayLapHoaDon" />
+          <ScalarProperty Name="TongCong" ColumnName="TongCong" />
+          <ScalarProperty Name="HTTT" ColumnName="HTTT" />
+          <ScalarProperty Name="IdPhieuXK" ColumnName="IdPhieuXK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="CNPMDOANCUOIKIModel.KhachHang">
+        <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="IdKH" ColumnName="IdKH" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhaCungCaps">
+      <EntityTypeMapping TypeName="CNPMDOANCUOIKIModel.NhaCungCap">
+        <MappingFragment StoreEntitySet="NhaCungCap">
+          <ScalarProperty Name="IdNCC" ColumnName="IdNCC" />
+          <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanViens">
+      <EntityTypeMapping TypeName="CNPMDOANCUOIKIModel.NhanVien">
+        <MappingFragment StoreEntitySet="NhanVien">
+          <ScalarProperty Name="IdNV" ColumnName="IdNV" />
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhieuXuatKhoes">
+      <EntityTypeMapping TypeName="CNPMDOANCUOIKIModel.PhieuXuatKho">
+        <MappingFragment StoreEntitySet="PhieuXuatKho">
+          <ScalarProperty Name="IdPhieuXK" ColumnName="IdPhieuXK" />
+          <ScalarProperty Name="NgayXuatKho" ColumnName="NgayXuatKho" />
+          <ScalarProperty Name="HoTenNguoiXuat" ColumnName="HoTenNguoiXuat" />
+          <ScalarProperty Name="TongSoTien" ColumnName="TongSoTien" />
+          <ScalarProperty Name="SoChungTuGocKem" ColumnName="SoChungTuGocKem" />
+          <ScalarProperty Name="IdDDHKH" ColumnName="IdDDHKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VatTus">
+      <EntityTypeMapping TypeName="CNPMDOANCUOIKIModel.VatTu">
+        <MappingFragment StoreEntitySet="VatTu">
+          <ScalarProperty Name="IdVT" ColumnName="IdVT" />
+          <ScalarProperty Name="IdDVT" ColumnName="IdDVT" />
+          <ScalarProperty Name="TenVT" ColumnName="TenVT" />
+          <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+          <ScalarProperty Name="GiaMua" ColumnName="GiaMua" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="IdNCC" ColumnName="IdNCC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhieuNhapKhoes">
+      <EntityTypeMapping TypeName="CNPMDOANCUOIKIModel.PhieuNhapKho">
+        <MappingFragment StoreEntitySet="PhieuNhapKho">
+          <ScalarProperty Name="IdDDHNCC" ColumnName="IdDDHNCC" />
+          <ScalarProperty Name="NgayNhapKho" ColumnName="NgayNhapKho" />
+          <ScalarProperty Name="Tong" ColumnName="Tong" />
+          <ScalarProperty Name="TenNguoiNhap" ColumnName="TenNguoiNhap" />
+          <ScalarProperty Name="IdPhieuNK" ColumnName="IdPhieuNK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

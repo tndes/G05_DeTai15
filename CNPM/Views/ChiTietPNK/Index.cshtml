@@ -1,0 +1,77 @@
+﻿@model IEnumerable<CNPM.Models.ChiTietPhieuNhapKho>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<link href="~/Content/bang.css" rel="stylesheet" />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div style="text-align:center">
+    @using (Html.BeginForm("index", "ChiTietPhieuNhapKho"))
+    {
+        <b>Search by: </b>@Html.RadioButton("searchBy", "TenVT",true)<text>Tên Vật Tư</text>
+        @Html.RadioButton("searchBy", "GiaNhap")<text>Giá Nhập</text>
+
+        @Html.TextBox("Search")<input type="submit" value="Search" style="width: auto;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;" />
+    }
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCT_PNK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdPhieuNK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaNhap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenVT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdDDHNCC)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCT_PNK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdPhieuNK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaNhap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenVT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdDDHNCC)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.IdCT_PNK }) |
+            @Html.ActionLink("Details", "Details", new { id = item.IdCT_PNK }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IdCT_PNK })
+        </td>
+    </tr>
+}
+
+</table>

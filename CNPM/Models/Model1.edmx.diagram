@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b091f1483b5e4ef38e59314b4a14549e" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="CNPMDOANCUOIKIModel.ChiTietDDH_KH" Width="1.5" PointX="5.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMDOANCUOIKIModel.ChiTietDDH_NCC" Width="2.75" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMDOANCUOIKIModel.ChiTietHoaDon" Width="1.5" PointX="9.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMDOANCUOIKIModel.ChiTietPhieuNhapKho" Width="1.5" PointX="7.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMDOANCUOIKIModel.ChiTietPhieuXuatKho" Width="1.5" PointX="7.5" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMDOANCUOIKIModel.DonDatHang_KH" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMDOANCUOIKIModel.DonDatHang_NCC" Width="1.875" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMDOANCUOIKIModel.DonViTinh" Width="1.5" PointX="3.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMDOANCUOIKIModel.HoaDonBanHang" Width="1.5" PointX="7.5" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMDOANCUOIKIModel.KhachHang" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMDOANCUOIKIModel.NhaCungCap" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMDOANCUOIKIModel.NhanVien" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMDOANCUOIKIModel.PhieuXuatKho" Width="1.5" PointX="5.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMDOANCUOIKIModel.VatTu" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="CNPMDOANCUOIKIModel.fk_CTDDHKH" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMDOANCUOIKIModel.fk_PXK123" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMDOANCUOIKIModel.fk_1234222" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMDOANCUOIKIModel.fk_PXK1" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMDOANCUOIKIModel.fk_1234" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMDOANCUOIKIModel.fk_PXK12" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMDOANCUOIKIModel.fk_PXK1234234" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMDOANCUOIKIModel.fk_12342" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMDOANCUOIKIModel.fk_NCC" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMDOANCUOIKIModel.fk_PXK1234" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMDOANCUOIKIModel.fk_HDBH" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMDOANCUOIKIModel.fk_VatTu" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CNPMDOANCUOIKIModel.PhieuNhapKho" Width="1.5" PointX="5.625" PointY="26.25" />
+        <AssociationConnector Association="CNPMDOANCUOIKIModel.fk_PNK" />
+        <AssociationConnector Association="CNPMDOANCUOIKIModel.fk_PNK12" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

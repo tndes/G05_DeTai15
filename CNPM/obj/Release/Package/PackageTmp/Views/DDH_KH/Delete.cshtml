@@ -1,0 +1,89 @@
+﻿@model CNPM.Models.DonDatHang_KH
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DonDatHang_KH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdDDHKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdDDHKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiGianGiaoHang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiGianGiaoHang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PTTT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PTTT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdVT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdVT)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

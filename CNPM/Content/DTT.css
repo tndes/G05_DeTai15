@@ -1,0 +1,24 @@
+.dl-horizontal, dd, dt {
+    border: 6px solid black;
+    text-align: center;
+    color: red;
+}
+.dl-horizontal {
+    box-sizing: border-box;
+    border-collapse: collapse;
+    text-align: center;
+    position: center;
+    float: right;
+}
+dl, dd, dt {
+    border: 6px solid #ccc;
+}
+dl{
+    width:100px;
+}
+dd,dt {
+    background-color: rgba(204, 204, 204, 0.507);
+    width:100px;
+    text-align:center;
+    padding-left:500px;
+}

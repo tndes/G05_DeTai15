@@ -1,0 +1,74 @@
+﻿@model IEnumerable<CNPM.Models.PhieuNhapKho>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<link href="~/Content/bang.css" rel="stylesheet" />
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div style="text-align:center">
+    @using (Html.BeginForm("index", "PhieuNhapKho"))
+    {
+        <b>Search by: </b>@Html.RadioButton("searchBy", "TenNguoiNhap", true)<text>Tên Người Nhập</text>
+ 
+
+
+        @Html.TextBox("Search")<input type="submit" value="Search" style="width: auto;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;" />
+    }
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdPhieuNK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenNguoiNhap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayNhapKho)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdDDHNCC)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPhieuNK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenNguoiNhap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayNhapKho)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDDHNCC)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdPhieuNK }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdPhieuNK }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdPhieuNK })
+            </td>
+        </tr>
+    }
+
+</table>

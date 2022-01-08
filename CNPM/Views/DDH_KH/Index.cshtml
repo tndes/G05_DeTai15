@@ -1,0 +1,90 @@
+﻿@model IEnumerable<CNPM.Models.DonDatHang_KH>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<link href="~/Content/bang.css" rel="stylesheet" />
+<div style="text-align:center">
+    @using (Html.BeginForm("index", "DDH_KH"))
+    {
+        <b>Search by: </b>@Html.RadioButton("searchBy", "TenKH",true)<text>Tên Khách Hàng</text>
+        @Html.RadioButton("searchBy", "DiaChi")<text>Địa Chỉ</text>
+
+        @Html.TextBox("search")<input type="submit" value="Search" style="width: auto;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;" />
+    }
+</div>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdDDHKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdNV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThoiGianGiaoHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PTTT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdVT)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDDHKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdNV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThoiGianGiaoHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PTTT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdVT)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdDDHKH }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdDDHKH }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdDDHKH })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CNPMDOANCUOIKIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ChiTietDDH_KH">
+    <Key>
+      <PropertyRef Name="IdCTDDH_KH" />
+    </Key>
+    <Property Name="IdCTDDH_KH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenVatTu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="DonGia" Type="Int32" Nullable="false" />
+    <Property Name="TongCong" Type="Int32" />
+    <Property Name="IdDDHKH" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DonDatHang_KH" Relationship="Self.fk_CTDDHKH" FromRole="ChiTietDDH_KH" ToRole="DonDatHang_KH" />
+  </EntityType>
+  <EntityType Name="ChiTietDDH_NCC">
+    <Key>
+      <PropertyRef Name="IdCTDDH_NCC" />
+    </Key>
+    <Property Name="IdCTDDH_NCC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdDDHNCC" Type="Int32" Nullable="false" />
+    <Property Name="TenVatTu" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="DVT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DonGia" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DonDatHang_NCC" Relationship="Self.fk_PXK123" FromRole="ChiTietDDH_NCC" ToRole="DonDatHang_NCC" />
+  </EntityType>
+  <EntityType Name="ChiTietHoaDon">
+    <Key>
+      <PropertyRef Name="IdCTHD" />
+    </Key>
+    <Property Name="IdCTHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="IdHD" Type="Int32" Nullable="false" />
+    <Property Name="DVT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DonGia" Type="Int32" Nullable="false" />
+    <Property Name="TenVT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HoaDonBanHang" Relationship="Self.fk_1234222" FromRole="ChiTietHoaDon" ToRole="HoaDonBanHang" />
+  </EntityType>
+  <EntityType Name="ChiTietPhieuNhapKho">
+    <Key>
+      <PropertyRef Name="IdCT_PNK" />
+    </Key>
+    <Property Name="IdCT_PNK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdPhieuNK" Type="Int32" Nullable="false" />
+    <Property Name="GiaNhap" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="TenVT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdDDHNCC" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PhieuNhapKho" Relationship="CNPMDOANCUOIKIModel.fk_PNK" FromRole="ChiTietPhieuNhapKho" ToRole="PhieuNhapKho" />
+  </EntityType>
+  <EntityType Name="ChiTietPhieuXuatKho">
+    <Key>
+      <PropertyRef Name="IdCT_PXK" />
+    </Key>
+    <Property Name="IdCT_PXK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdPhieuXK" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="GiaBan" Type="Int32" Nullable="false" />
+    <Property Name="GiaMua" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PhieuXuatKho" Relationship="Self.fk_PXK1" FromRole="ChiTietPhieuXuatKho" ToRole="PhieuXuatKho" />
+  </EntityType>
+  <EntityType Name="DonDatHang_KH">
+    <Key>
+      <PropertyRef Name="IdDDHKH" />
+    </Key>
+    <Property Name="IdDDHKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdKH" Type="Int32" Nullable="false" />
+    <Property Name="IdNV" Type="Int32" Nullable="false" />
+    <Property Name="TenKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ThoiGianGiaoHang" Type="DateTime" Precision="3" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PTTT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IdVT" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ChiTietDDH_KH" Relationship="Self.fk_CTDDHKH" FromRole="DonDatHang_KH" ToRole="ChiTietDDH_KH" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.fk_1234" FromRole="DonDatHang_KH" ToRole="NhanVien" />
+    <NavigationProperty Name="PhieuXuatKhoes" Relationship="Self.fk_PXK12" FromRole="DonDatHang_KH" ToRole="PhieuXuatKho" />
+    <NavigationProperty Name="KhachHang" Relationship="Self.fk_PXK1234234" FromRole="DonDatHang_KH" ToRole="KhachHang" />
+  </EntityType>
+  <EntityType Name="DonDatHang_NCC">
+    <Key>
+      <PropertyRef Name="IdDDHNCC" />
+    </Key>
+    <Property Name="IdDDHNCC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TongTien" Type="Int32" Nullable="false" />
+    <Property Name="TenCongTy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ThoiGianGiaoHang" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DiaDiemGiaoHang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdNV" Type="Int32" Nullable="false" />
+    <Property Name="IdNCC" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ChiTietDDH_NCC" Relationship="Self.fk_PXK123" FromRole="DonDatHang_NCC" ToRole="ChiTietDDH_NCC" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.fk_12342" FromRole="DonDatHang_NCC" ToRole="NhanVien" />
+    <NavigationProperty Name="NhaCungCap" Relationship="Self.fk_NCC" FromRole="DonDatHang_NCC" ToRole="NhaCungCap" />
+    <NavigationProperty Name="PhieuNhapKhoes" Relationship="CNPMDOANCUOIKIModel.fk_PNK12" FromRole="DonDatHang_NCC" ToRole="PhieuNhapKho" />
+  </EntityType>
+  <EntityType Name="DonViTinh">
+    <Key>
+      <PropertyRef Name="IdDVT" />
+    </Key>
+    <Property Name="IdDVT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DonVi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="VatTus" Relationship="Self.fk_PXK1234" FromRole="DonViTinh" ToRole="VatTu" />
+  </EntityType>
+  <EntityType Name="HoaDonBanHang">
+    <Key>
+      <PropertyRef Name="IdHD" />
+    </Key>
+    <Property Name="IdHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoTen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TienThueGTGT" Type="Int32" />
+    <Property Name="ThueSuatGTGT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgayLapHoaDon" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TongCong" Type="Int32" />
+    <Property Name="HTTT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IdPhieuXK" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ChiTietHoaDons" Relationship="Self.fk_1234222" FromRole="HoaDonBanHang" ToRole="ChiTietHoaDon" />
+    <NavigationProperty Name="PhieuXuatKho" Relationship="Self.fk_HDBH" FromRole="HoaDonBanHang" ToRole="PhieuXuatKho" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="IdKH" />
+    </Key>
+    <Property Name="IdKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DonDatHang_KH" Relationship="Self.fk_PXK1234234" FromRole="KhachHang" ToRole="DonDatHang_KH" />
+  </EntityType>
+  <EntityType Name="NhaCungCap">
+    <Key>
+      <PropertyRef Name="IdNCC" />
+    </Key>
+    <Property Name="IdNCC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNCC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="DonDatHang_NCC" Relationship="Self.fk_NCC" FromRole="NhaCungCap" ToRole="DonDatHang_NCC" />
+    <NavigationProperty Name="VatTus" Relationship="Self.fk_VatTu" FromRole="NhaCungCap" ToRole="VatTu" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="IdNV" />
+    </Key>
+    <Property Name="IdNV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DonDatHang_KH" Relationship="Self.fk_1234" FromRole="NhanVien" ToRole="DonDatHang_KH" />
+    <NavigationProperty Name="DonDatHang_NCC" Relationship="Self.fk_12342" FromRole="NhanVien" ToRole="DonDatHang_NCC" />
+  </EntityType>
+  <EntityType Name="PhieuXuatKho">
+    <Key>
+      <PropertyRef Name="IdPhieuXK" />
+    </Key>
+    <Property Name="IdPhieuXK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NgayXuatKho" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HoTenNguoiXuat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TongSoTien" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SoChungTuGocKem" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IdDDHKH" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ChiTietPhieuXuatKhoes" Relationship="Self.fk_PXK1" FromRole="PhieuXuatKho" ToRole="ChiTietPhieuXuatKho" />
+    <NavigationProperty Name="DonDatHang_KH" Relationship="Self.fk_PXK12" FromRole="PhieuXuatKho" ToRole="DonDatHang_KH" />
+    <NavigationProperty Name="HoaDonBanHangs" Relationship="Self.fk_HDBH" FromRole="PhieuXuatKho" ToRole="HoaDonBanHang" />
+  </EntityType>
+  <EntityType Name="VatTu">
+    <Key>
+      <PropertyRef Name="IdVT" />
+    </Key>
+    <Property Name="IdVT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdDVT" Type="Int32" Nullable="false" />
+    <Property Name="TenVT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GiaBan" Type="Int32" />
+    <Property Name="GiaMua" Type="Int32" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="IdNCC" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DonViTinh" Relationship="Self.fk_PXK1234" FromRole="VatTu" ToRole="DonViTinh" />
+    <NavigationProperty Name="NhaCungCap" Relationship="Self.fk_VatTu" FromRole="VatTu" ToRole="NhaCungCap" />
+  </EntityType>
+  <Association Name="fk_CTDDHKH">
+    <End Role="DonDatHang_KH" Type="Self.DonDatHang_KH" Multiplicity="1" />
+    <End Role="ChiTietDDH_KH" Type="Self.ChiTietDDH_KH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonDatHang_KH">
+        <PropertyRef Name="IdDDHKH" />
+      </Principal>
+      <Dependent Role="ChiTietDDH_KH">
+        <PropertyRef Name="IdDDHKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PXK123">
+    <End Role="DonDatHang_NCC" Type="Self.DonDatHang_NCC" Multiplicity="1" />
+    <End Role="ChiTietDDH_NCC" Type="Self.ChiTietDDH_NCC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonDatHang_NCC">
+        <PropertyRef Name="IdDDHNCC" />
+      </Principal>
+      <Dependent Role="ChiTietDDH_NCC">
+        <PropertyRef Name="IdDDHNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_1234222">
+    <End Role="HoaDonBanHang" Type="Self.HoaDonBanHang" Multiplicity="1" />
+    <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDonBanHang">
+        <PropertyRef Name="IdHD" />
+      </Principal>
+      <Dependent Role="ChiTietHoaDon">
+        <PropertyRef Name="IdHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PXK1">
+    <End Role="PhieuXuatKho" Type="Self.PhieuXuatKho" Multiplicity="1" />
+    <End Role="ChiTietPhieuXuatKho" Type="Self.ChiTietPhieuXuatKho" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhieuXuatKho">
+        <PropertyRef Name="IdPhieuXK" />
+      </Principal>
+      <Dependent Role="ChiTietPhieuXuatKho">
+        <PropertyRef Name="IdPhieuXK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_1234">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+    <End Role="DonDatHang_KH" Type="Self.DonDatHang_KH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="DonDatHang_KH">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PXK12">
+    <End Role="DonDatHang_KH" Type="Self.DonDatHang_KH" Multiplicity="1" />
+    <End Role="PhieuXuatKho" Type="Self.PhieuXuatKho" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonDatHang_KH">
+        <PropertyRef Name="IdDDHKH" />
+      </Principal>
+      <Dependent Role="PhieuXuatKho">
+        <PropertyRef Name="IdDDHKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PXK1234234">
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
+    <End Role="DonDatHang_KH" Type="Self.DonDatHang_KH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="IdKH" />
+      </Principal>
+      <Dependent Role="DonDatHang_KH">
+        <PropertyRef Name="IdKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_12342">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+    <End Role="DonDatHang_NCC" Type="Self.DonDatHang_NCC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="DonDatHang_NCC">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_NCC">
+    <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="1" />
+    <End Role="DonDatHang_NCC" Type="Self.DonDatHang_NCC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaCungCap">
+        <PropertyRef Name="IdNCC" />
+      </Principal>
+      <Dependent Role="DonDatHang_NCC">
+        <PropertyRef Name="IdNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PXK1234">
+    <End Role="DonViTinh" Type="Self.DonViTinh" Multiplicity="1" />
+    <End Role="VatTu" Type="Self.VatTu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonViTinh">
+        <PropertyRef Name="IdDVT" />
+      </Principal>
+      <Dependent Role="VatTu">
+        <PropertyRef Name="IdDVT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_HDBH">
+    <End Role="PhieuXuatKho" Type="Self.PhieuXuatKho" Multiplicity="1" />
+    <End Role="HoaDonBanHang" Type="Self.HoaDonBanHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhieuXuatKho">
+        <PropertyRef Name="IdPhieuXK" />
+      </Principal>
+      <Dependent Role="HoaDonBanHang">
+        <PropertyRef Name="IdPhieuXK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VatTu">
+    <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="1" />
+    <End Role="VatTu" Type="Self.VatTu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaCungCap">
+        <PropertyRef Name="IdNCC" />
+      </Principal>
+      <Dependent Role="VatTu">
+        <PropertyRef Name="IdNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CNPMDOANCUOIKIEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ChiTietDDH_KH" EntityType="Self.ChiTietDDH_KH" />
+    <EntitySet Name="ChiTietDDH_NCC" EntityType="Self.ChiTietDDH_NCC" />
+    <EntitySet Name="ChiTietHoaDons" EntityType="Self.ChiTietHoaDon" />
+    <EntitySet Name="ChiTietPhieuNhapKhoes" EntityType="Self.ChiTietPhieuNhapKho" />
+    <EntitySet Name="ChiTietPhieuXuatKhoes" EntityType="Self.ChiTietPhieuXuatKho" />
+    <EntitySet Name="DonDatHang_KH" EntityType="Self.DonDatHang_KH" />
+    <EntitySet Name="DonDatHang_NCC" EntityType="Self.DonDatHang_NCC" />
+    <EntitySet Name="DonViTinhs" EntityType="Self.DonViTinh" />
+    <EntitySet Name="HoaDonBanHangs" EntityType="Self.HoaDonBanHang" />
+    <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
+    <EntitySet Name="NhaCungCaps" EntityType="Self.NhaCungCap" />
+    <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+    <EntitySet Name="PhieuXuatKhoes" EntityType="Self.PhieuXuatKho" />
+    <EntitySet Name="VatTus" EntityType="Self.VatTu" />
+    <AssociationSet Name="fk_CTDDHKH" Association="Self.fk_CTDDHKH">
+      <End Role="DonDatHang_KH" EntitySet="DonDatHang_KH" />
+      <End Role="ChiTietDDH_KH" EntitySet="ChiTietDDH_KH" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PXK123" Association="Self.fk_PXK123">
+      <End Role="DonDatHang_NCC" EntitySet="DonDatHang_NCC" />
+      <End Role="ChiTietDDH_NCC" EntitySet="ChiTietDDH_NCC" />
+    </AssociationSet>
+    <AssociationSet Name="fk_1234222" Association="Self.fk_1234222">
+      <End Role="HoaDonBanHang" EntitySet="HoaDonBanHangs" />
+      <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PXK1" Association="Self.fk_PXK1">
+      <End Role="PhieuXuatKho" EntitySet="PhieuXuatKhoes" />
+      <End Role="ChiTietPhieuXuatKho" EntitySet="ChiTietPhieuXuatKhoes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_1234" Association="Self.fk_1234">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="DonDatHang_KH" EntitySet="DonDatHang_KH" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PXK12" Association="Self.fk_PXK12">
+      <End Role="DonDatHang_KH" EntitySet="DonDatHang_KH" />
+      <End Role="PhieuXuatKho" EntitySet="PhieuXuatKhoes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PXK1234234" Association="Self.fk_PXK1234234">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="DonDatHang_KH" EntitySet="DonDatHang_KH" />
+    </AssociationSet>
+    <AssociationSet Name="fk_12342" Association="Self.fk_12342">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="DonDatHang_NCC" EntitySet="DonDatHang_NCC" />
+    </AssociationSet>
+    <AssociationSet Name="fk_NCC" Association="Self.fk_NCC">
+      <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
+      <End Role="DonDatHang_NCC" EntitySet="DonDatHang_NCC" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PXK1234" Association="Self.fk_PXK1234">
+      <End Role="DonViTinh" EntitySet="DonViTinhs" />
+      <End Role="VatTu" EntitySet="VatTus" />
+    </AssociationSet>
+    <AssociationSet Name="fk_HDBH" Association="Self.fk_HDBH">
+      <End Role="PhieuXuatKho" EntitySet="PhieuXuatKhoes" />
+      <End Role="HoaDonBanHang" EntitySet="HoaDonBanHangs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VatTu" Association="Self.fk_VatTu">
+      <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
+      <End Role="VatTu" EntitySet="VatTus" />
+    </AssociationSet>
+    <EntitySet Name="PhieuNhapKhoes" EntityType="CNPMDOANCUOIKIModel.PhieuNhapKho" />
+    <AssociationSet Name="fk_PNK" Association="CNPMDOANCUOIKIModel.fk_PNK">
+      <End Role="PhieuNhapKho" EntitySet="PhieuNhapKhoes" />
+      <End Role="ChiTietPhieuNhapKho" EntitySet="ChiTietPhieuNhapKhoes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PNK12" Association="CNPMDOANCUOIKIModel.fk_PNK12">
+      <End Role="DonDatHang_NCC" EntitySet="DonDatHang_NCC" />
+      <End Role="PhieuNhapKho" EntitySet="PhieuNhapKhoes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PhieuNhapKho">
+    <Key>
+      <PropertyRef Name="IdPhieuNK" />
+    </Key>
+    <Property Name="IdPhieuNK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNguoiNhap" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tong" Type="Int32" />
+    <Property Name="NgayNhapKho" Type="DateTime" Precision="3" />
+    <Property Name="IdDDHNCC" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ChiTietPhieuNhapKhoes" Relationship="CNPMDOANCUOIKIModel.fk_PNK" FromRole="PhieuNhapKho" ToRole="ChiTietPhieuNhapKho" />
+    <NavigationProperty Name="DonDatHang_NCC" Relationship="CNPMDOANCUOIKIModel.fk_PNK12" FromRole="PhieuNhapKho" ToRole="DonDatHang_NCC" />
+  </EntityType>
+  <Association Name="fk_PNK">
+    <End Type="CNPMDOANCUOIKIModel.PhieuNhapKho" Role="PhieuNhapKho" Multiplicity="1" />
+    <End Type="CNPMDOANCUOIKIModel.ChiTietPhieuNhapKho" Role="ChiTietPhieuNhapKho" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhieuNhapKho">
+        <PropertyRef Name="IdPhieuNK" />
+      </Principal>
+      <Dependent Role="ChiTietPhieuNhapKho">
+        <PropertyRef Name="IdPhieuNK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PNK12">
+    <End Type="CNPMDOANCUOIKIModel.DonDatHang_NCC" Role="DonDatHang_NCC" Multiplicity="1" />
+    <End Type="CNPMDOANCUOIKIModel.PhieuNhapKho" Role="PhieuNhapKho" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonDatHang_NCC">
+        <PropertyRef Name="IdDDHNCC" />
+      </Principal>
+      <Dependent Role="PhieuNhapKho">
+        <PropertyRef Name="IdDDHNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

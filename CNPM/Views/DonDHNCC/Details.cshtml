@@ -1,0 +1,72 @@
+﻿@model IEnumerable<CNPM.Models.DonDatHang_NCC>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+<link href="~/Content/bang.css" rel="stylesheet" />
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdDDHNCC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenCongTy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThoiGianGiaoHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaDiemGiaoHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdNV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdNCC)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDDHNCC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TongTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenCongTy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThoiGianGiaoHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaDiemGiaoHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdNV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdNCC)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

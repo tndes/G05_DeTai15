@@ -1,0 +1,78 @@
+﻿@model IEnumerable<CNPM.Models.DonDatHang_KH>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+<link href="~/Content/bang.css" rel="stylesheet" />
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdDDHKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdNV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThoiGianGiaoHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PTTT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdVT)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDDHKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdNV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThoiGianGiaoHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PTTT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdVT)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>
